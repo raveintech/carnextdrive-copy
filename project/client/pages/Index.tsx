@@ -66,13 +66,7 @@ export default function Index() {
           </div>
 
           {/* Right side - Hero image */}
-          <div className="relative hidden lg:block bg-gray-100">
-            <img
-              src="/Ecar.JPG"
-              alt="Black SUV on road"
-              className="w-full h-full object-cover"
-            />
-          </div>
+        
         </div>
       </section>
 
