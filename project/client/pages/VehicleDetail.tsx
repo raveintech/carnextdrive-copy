@@ -45,7 +45,7 @@ const vehicleData: Record<
     monthlyPrice: 1349,
     seats: 4,
     image:
-      "/Camaro.jpg",
+      "Camaro.jpg",
     description:
       "Iconic American muscle. The Chevy Camaro delivers serious performance and head-turning style on every drive.",
     features: [
