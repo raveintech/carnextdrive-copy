@@ -22,7 +22,7 @@ const cars = [
     weeklyPrice: 399,
     monthlyPrice: 1349,
     image:
-      "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=500&h=400&fit=crop",
+      "/Camaro.jpg",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const cars = [
     weeklyPrice: 479,
     monthlyPrice: 1599,
     image:
-      "https://images.unsplash.com/photo-1606611013016-969c19d4eeb9?w=500&h=400&fit=crop",
+      "/Tahoe.jpg",
   },
 ];
 
