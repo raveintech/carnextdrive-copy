@@ -40,8 +40,7 @@ export default function Index() {
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      
+      {/* Hero Section */} 
         <section
   className="relative min-h-[500px] bg-cover bg-center"
   style={{ backgroundImage: "url('/Ecar.JPG')" }}
@@ -66,10 +65,8 @@ export default function Index() {
           </div>
 
           {/* Right side - Hero image */}
-        
         </div>
       </section>
-
       {/* How it Works Section */}
       <section id="how-it-works" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-12">
