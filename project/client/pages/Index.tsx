@@ -41,7 +41,7 @@ export default function Index() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      
         <section
   className="relative min-h-[500px] bg-cover bg-center"
   style={{ backgroundImage: "url('/Ecar.JPG')" }}
