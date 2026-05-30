@@ -3,8 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Navigation } from "@/components/Navigation";
 import { Car, FileText, CheckCircle } from "lucide-react";
 
-// Display prices for car cards. Authoritative pricing lives on the server
-// in server/routes/stripe.ts (CAR_CATALOG). Keep these two in sync.
 const cars = [
   {
     id: 1,
@@ -12,8 +10,7 @@ const cars = [
     type: "Sedan",
     weeklyPrice: 349,
     monthlyPrice: 1199,
-    image:
-      "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=500&h=400&fit=crop",
+    image: "/Chrysler.jpg",
   },
   {
     id: 2,
@@ -21,8 +18,7 @@ const cars = [
     type: "Coupe",
     weeklyPrice: 399,
     monthlyPrice: 1349,
-    image:
-      "/Camaro.jpg",
+    image: "/Camaro.jpg",
   },
   {
     id: 3,
@@ -30,8 +26,7 @@ const cars = [
     type: "SUV",
     weeklyPrice: 479,
     monthlyPrice: 1599,
-    image:
-      "/Tahoe.jpg",
+    image: "/Tahoe.jpg",
   },
 ];
 
@@ -40,33 +35,34 @@ export default function Index() {
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */} 
-        <section
-  className="relative min-h-[500px] bg-cover bg-center"
-  style={{ backgroundImage: "url('/Ecar.JPG')" }}
->
-          {/* Left side - Text content */}
-          <div className="flex flex-col justify-center px-6 sm:px-12 py-12 lg:py-0 bg-white">
-            <h1 className="text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight">
+      {/* Hero Section */}
+      <section
+        className="relative min-h-[560px] bg-cover bg-center flex items-center"
+        style={{ backgroundImage: "url('/Ecar.JPG')" }}
+      >
+        <div className="absolute inset-0 bg-black/30" />
+
+        <div className="relative max-w-7xl mx-auto w-full px-6 sm:px-12 py-20">
+          <div className="max-w-2xl">
+            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
               Drive a Car Weekly.
               <br />
               Simple & Affordable.
             </h1>
-            <p className="text-lg text-foreground/70 mb-8 font-medium">
+
+            <p className="text-lg text-white/90 mb-8 font-medium">
               Flexible rentals. No long-term commitment.
             </p>
-            <div className="flex gap-4">
-              <Link to="/">
-                <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-base px-8 py-3">
-                  Browse Cars
-                </Button>
-              </Link>
-            </div>
-          </div>
 
-          {/* Right side - Hero image */}
+            <Link to="/">
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-base px-8 py-3">
+                Browse Cars
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
+
       {/* How it Works Section */}
       <section id="how-it-works" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-12">
@@ -77,7 +73,6 @@ export default function Index() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Step 1 */}
             <div className="flex flex-col items-center text-center">
               <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-6">
                 <Car className="w-10 h-10 text-accent" />
@@ -91,7 +86,6 @@ export default function Index() {
               </p>
             </div>
 
-            {/* Step 2 */}
             <div className="flex flex-col items-center text-center">
               <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-6">
                 <FileText className="w-10 h-10 text-accent" />
@@ -105,7 +99,6 @@ export default function Index() {
               </p>
             </div>
 
-            {/* Step 3 */}
             <div className="flex flex-col items-center text-center">
               <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-6">
                 <CheckCircle className="w-10 h-10 text-accent" />
@@ -143,31 +136,25 @@ export default function Index() {
                   <img
                     src={car.image}
                     alt={car.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
+
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-1">
                     {car.name}
                   </h3>
                   <p className="text-sm text-foreground/60 mb-4">{car.type}</p>
 
-                  {/* Weekly + Monthly pricing */}
                   <div className="space-y-1 mb-6">
                     <div className="flex items-baseline gap-2">
-                      <span
-                        className="text-2xl font-bold text-accent"
-                        data-testid={`car-weekly-price-${car.id}`}
-                      >
+                      <span className="text-2xl font-bold text-accent">
                         ${car.weeklyPrice}
                       </span>
                       <span className="text-foreground/60 text-sm">/week</span>
                     </div>
                     <div className="flex items-baseline gap-2">
-                      <span
-                        className="text-2xl font-bold text-accent"
-                        data-testid={`car-monthly-price-${car.id}`}
-                      >
+                      <span className="text-2xl font-bold text-accent">
                         ${car.monthlyPrice}
                       </span>
                       <span className="text-foreground/60 text-sm">/month</span>
@@ -175,10 +162,7 @@ export default function Index() {
                   </div>
 
                   <Link to={`/vehicle/${car.id}`}>
-                    <Button
-                      data-testid={`car-view-details-${car.id}`}
-                      className="w-full bg-foreground hover:bg-foreground/90 text-white"
-                    >
+                    <Button className="w-full bg-foreground hover:bg-foreground/90 text-white">
                       View Details
                     </Button>
                   </Link>
@@ -189,65 +173,9 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-foreground text-white py-12">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h4 className="font-bold mb-4">CarNextDrive</h4>
-              <p className="text-white/70 text-sm">
-                Simple & affordable weekly car rentals.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Company</h4>
-              <ul className="space-y-2 text-white/70 text-sm">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Blog
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Support</h4>
-              <ul className="space-y-2 text-white/70 text-sm">
-                <li>
-                  <a href="#faq" className="hover:text-white transition-colors">
-                    FAQ
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Legal</h4>
-              <ul className="space-y-2 text-white/70 text-sm">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Terms
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-white/20 pt-8 text-center text-white/70 text-sm">
-            <p>&copy; 2024 CarNextDrive. All rights reserved.</p>
-          </div>
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 text-center text-white/70 text-sm">
+          <p>&copy; 2024 CarNextDrive. All rights reserved.</p>
         </div>
       </footer>
     </div>
