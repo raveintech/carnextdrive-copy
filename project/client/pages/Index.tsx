@@ -65,7 +65,7 @@ export default function Index() {
           {/* Right side - Hero image */}
           <div className="relative hidden lg:block bg-gray-100">
             <img
-              src="https://images.unsplash.com/photo-1606611013016-969c19d4eeb9?w=800&h=600&fit=crop"
+              src="/Ecar.JPG"
               alt="Black SUV on road"
               className="w-full h-full object-cover"
             />
