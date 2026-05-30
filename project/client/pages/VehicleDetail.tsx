@@ -45,7 +45,7 @@ const vehicleData: Record<
     monthlyPrice: 1349,
     seats: 4,
     image:
-      "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800&h=600&fit=crop",
+      "/Camaro.jpg",
     description:
       "Iconic American muscle. The Chevy Camaro delivers serious performance and head-turning style on every drive.",
     features: [
@@ -64,7 +64,7 @@ const vehicleData: Record<
     monthlyPrice: 1599,
     seats: 8,
     image:
-      "https://images.unsplash.com/photo-1606611013016-969c19d4eeb9?w=800&h=600&fit=crop",
+      "/Tahoe.jpg",
     description:
       "A spacious and comfortable SUV perfect for families and group trips. The Chevy Tahoe offers excellent performance and luxury amenities.",
     features: [
