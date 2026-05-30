@@ -42,7 +42,10 @@ export default function Index() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px]">
+        <section
+  className="relative min-h-[500px] bg-cover bg-center"
+  style={{ backgroundImage: "url('/Ecar.JPG')" }}
+>
           {/* Left side - Text content */}
           <div className="flex flex-col justify-center px-6 sm:px-12 py-12 lg:py-0 bg-white">
             <h1 className="text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight">
